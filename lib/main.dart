@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_scroll/list_widget.dart';
+import 'package:persistent_scroll/list.dart';
 
 void main() {
   runApp(const MyApp());
