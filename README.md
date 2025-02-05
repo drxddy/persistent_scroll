@@ -2,7 +2,7 @@
 
 - Load ListWidget and run the app.
 - Increment first list item by clicking it 3 times. Scroll to bottom and then scroll to top, the
-  count will get reset
+  count value should persist.
 
 ## Implementation
 
