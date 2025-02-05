@@ -35,6 +35,12 @@ class _ListItemsTwoState extends State<ListItemsTwo> {
   }
 }
 
+/// [_ListItemWidget] now takes an [increment] function that increments the
+/// count of the item at the given index.
+/// 
+/// The [increment] function is passed from the parent widget, and is called
+/// when the user taps the increment button, the parent widget then updates
+/// the state of the list item.
 class _ListItemWidget extends StatelessWidget {
   final int index;
   final int count;
