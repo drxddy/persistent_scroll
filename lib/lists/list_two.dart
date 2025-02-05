@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// [ListItemsTwo] introduces a StatefulWidget that manages a list of items.
+/// 
+/// The state is not hoisted to the parent widget, and is managed by the
+/// [ListItemsTwo] widget itself. 
 class ListItemsTwo extends StatefulWidget {
   const ListItemsTwo({super.key});
 

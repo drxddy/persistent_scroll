@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// [ListItemsOne] will render a list of 100 widgets, each maintaining 
+/// its own state. 
+/// 
+/// The state of each widget is maintained using the [AutomaticKeepAliveClientMixin]
+/// to keep the state of the widget when it is not in the viewport and 
+/// state is not the default state.
 class ListItemsOne extends StatelessWidget {
   const ListItemsOne({super.key});
 
@@ -9,7 +15,7 @@ class ListItemsOne extends StatelessWidget {
   Widget build(BuildContext context) {
     /// ListView.builder renders a scrollable list of widgets lazily,
     /// i.e,. only the widgets that exist in the viewport plus cacheExtent
-    /// are rendered, so pre filling a list with 100 widgets is not necessary.
+    /// are rendered, so pre filling a list with 100 widgets is not necessary.    
     /* 
       var list = <Widget>[];
       for (var i = 0; i <= 100; i++) {

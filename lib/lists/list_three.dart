@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-// Controller class with ChangeNotifier
+/// [ListController] introduces a ChangeNotifier that manages a list of items.
+/// 
+/// The state is hoisted to the parent widget, and is managed by the
+/// [ListController] widget itself.
 class ListController extends ChangeNotifier {
   final List<int> items = List.filled(100, 0);
   static const itemCount = 100;
@@ -11,6 +14,12 @@ class ListController extends ChangeNotifier {
   }
 }
 
+/// [ListItemsThree] improves upon [ListItemsTwo] by hoisting the state to a
+/// ChangeNotifier class.
+/// 
+/// The state is managed by the [ListController] class, and the list view is
+/// wrapped in a [ListenableBuilder] widget that listens to the [ListController]
+/// and rebuilds the list view when the controller notifies its listeners.
 class ListItemsThree extends StatelessWidget {
   ListItemsThree({super.key});
 

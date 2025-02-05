@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+/// Improved version of the [_ListController] class from the previous example.
+/// 
+/// This is a singleton class that extends [ChangeNotifier]. It has a list of
+/// items that are initialized to 0. It has a method to increment the count of
+/// an item at a given index and a method to reset all items to 0.
+/// 
+/// Since the given task only needs one instance of the view, we can use a
+/// singleton class to manage the state of the view.
 class _ListController extends ChangeNotifier {
   static final _ListController _instance = _ListController._internal();
   factory _ListController() => _instance;
@@ -20,6 +28,12 @@ class _ListController extends ChangeNotifier {
   }
 }
 
+/// Improved version of the [ListItemsThree] class from the previous example.
+/// 
+/// This widgets improves the UI by adding a reset button to the app bar. The
+/// list view is wrapped in a [ListenableBuilder] widget that listens to the
+/// [_ListController] and rebuilds the list view when the controller notifies
+/// its listeners.
 class ListItemsFour extends StatefulWidget {
   const ListItemsFour({super.key});
 
