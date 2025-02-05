@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ListItems extends StatefulWidget {
-  const ListItems({super.key});
+class ListItemsTwo extends StatefulWidget {
+  const ListItemsTwo({super.key});
 
   @override
-  State<ListItems> createState() => _ListItemsState();
+  State<ListItemsTwo> createState() => _ListItemsTwoState();
 }
 
-class _ListItemsState extends State<ListItems> {
+class _ListItemsTwoState extends State<ListItemsTwo> {
   final List<int> _items = List.filled(100, 0);
   static const itemCount = 100;
 
@@ -20,24 +20,23 @@ class _ListItemsState extends State<ListItems> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: itemCount,
-      itemBuilder: (context, index) {
-      return ListItemWidget(
-        index: index,
-        count: _items[index],
-        increment: _increment,
-      );
-    });
+        itemCount: itemCount,
+        itemBuilder: (context, index) {
+          return _ListItemWidget(
+            index: index,
+            count: _items[index],
+            increment: _increment,
+          );
+        });
   }
 }
 
-class ListItemWidget extends StatelessWidget {
+class _ListItemWidget extends StatelessWidget {
   final int index;
   final int count;
   final void Function(int) increment;
-  const ListItemWidget(
-      {super.key,
-      required this.index,
+  const _ListItemWidget(
+      {required this.index,
       required this.count,
       required this.increment});
 

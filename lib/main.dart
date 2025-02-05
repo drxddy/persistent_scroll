@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_scroll/list_gs.dart';
+import 'package:persistent_scroll/lists/list_four.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('List Demo'),
-        ),
-        body: const ListItems(),
+        body: const ListItemsFour(),
       ),
     );
   }

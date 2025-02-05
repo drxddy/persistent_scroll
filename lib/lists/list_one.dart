@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ListWidget extends StatelessWidget {
-  const ListWidget({super.key});
+class ListItemsOne extends StatelessWidget {
+  const ListItemsOne({super.key});
 
   static const itemCount = 100;
 
   @override
   Widget build(BuildContext context) {
     /// ListView.builder renders a scrollable list of widgets lazily,
-    /// i.e,. only the widgets that exist in the viewport plus cacheExtent 
+    /// i.e,. only the widgets that exist in the viewport plus cacheExtent
     /// are rendered, so pre filling a list with 100 widgets is not necessary.
     /* 
       var list = <Widget>[];
@@ -18,31 +18,29 @@ class ListWidget extends StatelessWidget {
     */
     return ListView.builder(
         itemCount: itemCount,
-        itemBuilder: (context, index) => const ListItemWidget());
+        itemBuilder: (context, index) => const _ListItemWidget());
   }
 }
 
-class ListItemWidget extends StatefulWidget {
-  const ListItemWidget({super.key});
+class _ListItemWidget extends StatefulWidget {
+  const _ListItemWidget();
   @override
-  State<ListItemWidget> createState() => _ListItemWidgetState();
+  State<_ListItemWidget> createState() => _ListItemWidgetState();
 }
 
-
-/// The state of the [ListItemWidget]
+/// The state of the [_ListItemWidget]
 /// using [AutomaticKeepAliveClientMixin] to keep the state of the widget
 /// when it is not in the viewport.
-class _ListItemWidgetState extends State<ListItemWidget>
+class _ListItemWidgetState extends State<_ListItemWidget>
     with AutomaticKeepAliveClientMixin {
-  
   static const int initialCount = 0;
 
   int count = initialCount;
 
-  /// Only set to true if the widget is not in the viewport and count 
+  /// Only set to true if the widget is not in the viewport and count
   /// is not default value.
   @override
-  bool get wantKeepAlive => count!=initialCount;
+  bool get wantKeepAlive => count != initialCount;
 
   void increment() {
     setState(() {
@@ -63,6 +61,7 @@ class _ListItemWidgetState extends State<ListItemWidget>
               child: const Text("+"),
             )
           ],
-        ));
+        )
+      );
   }
 }
