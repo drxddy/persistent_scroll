@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:persistent_scroll/lists/list_four.dart';
+import 'package:persistent_scroll/lists/lists.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: const ListItemsFour(),
+        body: const ListItemsThree(),
       ),
     );
   }

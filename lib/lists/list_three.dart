@@ -20,10 +20,21 @@ class ListController extends ChangeNotifier {
 /// The state is managed by the [ListController] class, and the list view is
 /// wrapped in a [ListenableBuilder] widget that listens to the [ListController]
 /// and rebuilds the list view when the controller notifies its listeners.
-class ListItemsThree extends StatelessWidget {
-  ListItemsThree({super.key});
+class ListItemsThree extends StatefulWidget {
+  const ListItemsThree({super.key});
 
+  @override
+  State<ListItemsThree> createState() => _ListItemsThreeState();
+}
+
+class _ListItemsThreeState extends State<ListItemsThree> {
   final ListController controller = ListController();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
